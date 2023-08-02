@@ -80,6 +80,7 @@ const updateArtist = async (req, res) => {
 const deleteArtistById = async (req, res) => {
   try {
     const { id } = req.params;
+
     const {
       rows: [artist],
     } = await db.query("DELETE FROM ARTISTS WHERE ID = $1 RETURNING*", [id]);
