@@ -17,8 +17,7 @@ describe("Create artist", () => {
 
       const {
         rows: [artistData],
-      } = await db.query(`SELECT * FROM Artists WHERE id = ${body.id}`); //destructuring used  to extract the 'rows property from the result object
-      //returned by the 'db.query()' method
+      } = await db.query(`SELECT * FROM Artists WHERE id = ${body.id}`);
       expect(artistData.name).to.equal("Tame Impala");
       expect(artistData.genre).to.equal("rock");
     });
